@@ -6,25 +6,123 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f4f4f4;
+    background-color: #0e0e0e;
 }
+
 .player {
-    background: #fff;
+    display: flex;
+    flex-direction: row;
+    background: #424242;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    height: 80%;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
 }
+
+.playlist-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow-y: auto;
+    margin-right: 20px;
+    height: 100%;
+    width: 100%;
+    color: white;
+}
+
+.controls-container {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.current-song {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .controls button {
-    margin: 5px;
+    margin: 10px;
+    padding: 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    text-align: center;
+
 }
+
+#nextBtn {
+    background-color: green;
+    color: white;
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+#restartBtn {
+    background-color: #1d1d1d;
+    color: rgb(255, 255, 255);
+    width: auto;
+    border-radius: 20px;
+    height: auto;
+}
+
 #playlist {
     list-style: none;
     padding: 0;
 }
+
 #playlist li {
     padding: 10px;
     cursor: pointer;
 }
+
 #playlist li:hover {
     background: #ddd;
+}
+
+/* Estilos para dispositivos móviles */
+@media only screen and (max-width: 570px) {
+    .player {
+        flex-direction: column;
+        /* Cambiar la dirección del flexbox a columna */
+        align-items: center;
+        /* Centrar horizontalmente */
+    }
+
+    .playlist-container {
+        order: 3;
+        /* Cambiar el orden de visualización, poner la lista al final */
+        margin-right: 0;
+        /* Eliminar el margen derecho */
+        margin-top: 20px;
+        /* Añadir margen superior */
+    }
+
+    .controls-container {
+        order: 2;
+        /* Cambiar el orden de visualización, poner los controles después de la canción */
+    }
+
+    .current-song {
+        order: 1;
+        /* Cambiar el orden de visualización, poner la canción primero */
+    }
 }
